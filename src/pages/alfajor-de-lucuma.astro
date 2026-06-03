@@ -40,16 +40,24 @@ import Layout from "../layouts/Layout.astro";
 
 		<p class="text-[14px] font-semibold tracking-wider mt-6 mb-2">ELIGE SU PRESENTACIÓN</p>
 		<div class="grid grid-cols-2 gap-4">
-			<div class="border border-solid border-[#8c7d6d] rounded-xl p-4 text-center">
-				<p class="">Individual</p>
+			<button
+				id="opt-individual"
+				onclick="selectOption('Individual', '€4')"
+				class="presentation-option border border-solid border-[#8c7d6d] rounded-xl p-4 text-center cursor-pointer transition-all"
+			>
+				<p>Individual</p>
 				<p class="text-2xl">€4</p>
-			</div>
-			<div class="border border-solid border-[#8c7d6d] rounded-xl p-4 text-center">
-				<p class="">Caja de 6 unid.</p>
+			</button>
+			<button
+				id="opt-caja"
+				onclick="selectOption('Caja de 6 unid.', '€22')"
+				class="presentation-option border border-solid border-[#8c7d6d] rounded-xl p-4 text-center cursor-pointer transition-all"
+			>
+				<p>Caja de 6 unid.</p>
 				<p class="text-2xl">€22</p>
-			</div>
+			</button>
 		</div>
-		<a href="#" class="bg-[#90aab1] text-white rounded-full font-semibold text-center py-4 block mt-8 mb-2">HAZ TU PEDIDO</a>
+		<a href="#" id="whatsapp-btn" class="bg-[#90aab1] text-white rounded-full font-semibold text-center py-4 block mt-8 mb-2">HAZ TU PEDIDO</a>
 
 	</section>
 
@@ -58,5 +66,40 @@ import Layout from "../layouts/Layout.astro";
 		<p>Contáctanos y te responderemos lo antes posible.</p>
 	</section>
 	
-  
+<style>
+    .presentation-option.selected {
+        background-color: #90aab1;
+        color: white;
+        border-color: #90aab1;
+    }
+</style>
+
+<script>
+    let selectedOption = "";
+
+    function selectOption(label: string, price: string) {
+        selectedOption = label;
+
+        // Quita selección de todos
+        document.querySelectorAll(".presentation-option").forEach(el => {
+            el.classList.remove("selected");
+        });
+
+        // Marca el clickeado
+        const id = label === "Individual" ? "opt-individual" : "opt-caja";
+        document.getElementById(id)?.classList.add("selected");
+
+        // Actualiza el href del botón
+        const phone = "34691551884"; // ← pon aquí el número con código de país, sin +
+        const message = encodeURIComponent(
+            `Hola, estoy interesado en hacer un pedido de Alfajor de Lúcuma "${label}"`
+        );
+        const btn = document.getElementById("whatsapp-btn");
+        if (btn) {
+            btn.setAttribute("href", `https://wa.me/${phone}?text=${message}`);
+            btn.setAttribute("target", "_blank");
+        }
+    }
+</script>
+
 </Layout>
