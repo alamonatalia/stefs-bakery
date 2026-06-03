@@ -1,11 +1,75 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const logoStefs = "/stefs-bakery/stefs-bakery.svg";
+const bgImage = "/stefs-bakery/bg-test-8.png"; 
+const bgPostre = "/stefs-bakery/postre-test-1.png";
+const bgLucuma = "/stefs-bakery/lucuma-test-1.png";
+const bgManjar = "/stefs-bakery/manjar-test-1.png";
+const bgFrutilla = "/stefs-bakery/frutilla-test-1.png";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<div class="text-4xl text-pink-500 bg-black">holi manoli</div>
+  <section
+    class="relative w-full h-screen bg-bottom bg-cover"
+    style={`background-image: url('${bgImage}')`}>
+
+
+	<div class="grid grid-cols-3 place-items-center h-screen">
+
+		<div class="absolute top-8 left-0 w-full z-10">
+			<h1 class="text-center text-[120px] text-[var-(--color-verde)]">Alfajor de lúcuma</h1>
+		</div>
+		
+
+		<!-- izquierda -->
+		<div class="">
+			<img src={logoStefs} alt="logo" class="w-24 h-auto mx-auto mb-4" />
+				<div class="flex items-center gap-4">
+				<p class="text-center">Colocar algo más distitivo a cerca del producto o del origen</p>
+			</div>
+		</div>
+
+		<!-- centro -->
+		<div class="z-20">
+			<img src={bgPostre} alt="postre" class="" />
+			
+		</div>
+		<!-- derecha -->
+		<div class="">
+			<p class="mb-2">Ingredientes</p>
+			<div class="flex items-center gap-4 mb-4">
+				<div class="bg-gradient-to-br from-[#ffffff]/40 to-[#ffffff]/0 backdrop-blur rounded-full w-20 h-20 flex items-center justify-center">
+					<img src={bgLucuma} alt="lucuma" class="w-14 h-auto" />
+				</div>
+				<div>
+					<p>Lúcuma</p>
+					<p>80 grs</p>
+				</div>
+			</div>
+			<div class="flex items-center gap-4 mb-4">
+				<div class="bg-gradient-to-br from-[#ffffff]/60 to-[#ffffff]/5 backdrop-blur rounded-full w-20 h-20 flex items-center justify-center">
+					<img src={bgManjar} alt="manjar" class="w-14 h-auto" />
+				</div>
+				
+				<div>
+					<p>Manjar</p>
+					<p>80 grs</p>
+				</div>
+			</div>
+			<div class="flex items-center gap-4">
+				<div class="bg-gradient-to-br from-[#ffffff]/60 to-[#ffffff]/5 backdrop-blur rounded-full w-20 h-20 flex items-center justify-center">
+					<img src={bgFrutilla} alt="frutilla" class="w-14 h-auto" />
+				</div>
+				
+				<div>
+					<p>Frutillas</p>
+					<p>40 grs</p>
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+
+  </section>
 </Layout>
