@@ -3,10 +3,9 @@
 @import "tailwindcss";
 
 body{
-   color: #8c7d6d;
+   color: #736355;
 }
 
-h1,
 .sb-special {
    font-family: "Prata", serif;
 }

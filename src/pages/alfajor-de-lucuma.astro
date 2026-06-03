@@ -1,0 +1,62 @@
+---
+const logoStefs = "/stefs-bakery/stefs.svg";
+const arrow = "/stefs-bakery/arrow.svg";
+const postre2 = "/stefs-bakery/postre-2.png";
+
+
+const logoStefsBakeryS = "/stefs-bakery/stefs-bakery-s.svg";
+const bgHero = "/stefs-bakery/foto-v3-compress.png";
+
+const deliveryIcon ="/stefs-bakery/delivery.svg";
+
+
+
+const bgImage = "/stefs-bakery/bg-test-8.png"; 
+const bgPostre = "/stefs-bakery/postre-test-1.png";
+const bgLucuma = "/stefs-bakery/lucuma-test-1.png";
+const bgManjar = "/stefs-bakery/manjar-test-1.png";
+const bgFrutilla = "/stefs-bakery/frutilla-test-1.png";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+
+	<header class="flex items-center py-4 mb-4"> 
+		<a href="/stefs-bakery">
+			<img src={arrow} alt="logo" class="h-8 pl-6 w-auto mx-auto mb-4 z-20 relative" />
+		</a>
+		<div class="w-full">
+			<img src={logoStefs} alt="logo" class="w-auto h-7 mx-auto mb-4 z-20 relative" />
+		</div>
+	</header>
+	
+	<section>
+		<img src={postre2} alt="logo" class="w-full h-auto -mt-8 mb-4 z-10" />
+	</section>
+
+	<section class="bg-white -mt-10 relative rounded-4xl p-8">
+		<h1 class="text-xl font-semibold mb-4">ALFAJOR DE LÚCUMA</h1>
+		<p class="leading-[1.2]">Suave alfajor de maicena relleno de manjar de lúcuma con trozos de chocolate y coco.</p>
+
+		<p class="text-[14px] font-semibold tracking-wider mt-6 mb-2">ELIGE SU PRESENTACIÓN</p>
+		<div class="grid grid-cols-2 gap-4">
+			<div class="border border-solid border-[#8c7d6d] rounded-xl p-4 text-center">
+				<p class="">Individual</p>
+				<p class="text-2xl">€4</p>
+			</div>
+			<div class="border border-solid border-[#8c7d6d] rounded-xl p-4 text-center">
+				<p class="">Caja de 6 unid.</p>
+				<p class="text-2xl">€22</p>
+			</div>
+		</div>
+		<a href="#" class="bg-[#90aab1] text-white rounded-full font-semibold text-center py-4 block mt-8 mb-2">HAZ TU PEDIDO</a>
+
+	</section>
+
+	<section class="bg-[#fbf7f3] text-center -mt-10 pt-14 pb-8 ">
+		<p class="font-bold">¿Tienes dudas o consultas?</p>
+		<p>Contáctanos y te responderemos lo antes posible.</p>
+	</section>
+	
+  
+</Layout>

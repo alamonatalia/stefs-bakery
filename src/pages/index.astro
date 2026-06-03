@@ -3,16 +3,11 @@ const logoStefsBakery = "/stefs-bakery/stefs-bakery.svg";
 const logoStefsBakeryS = "/stefs-bakery/stefs-bakery-s.svg";
 const bgHero = "/stefs-bakery/foto-v3-compress.png";
 const postre1 = "/stefs-bakery/postre-1.png";
+const postre3 = "/stefs-bakery/postre-3.png";
 const deliveryIcon ="/stefs-bakery/delivery.svg";
 
-const logoStefs = "/stefs-bakery/stefs-bakery.svg";
 
 
-const bgImage = "/stefs-bakery/bg-test-8.png"; 
-const bgPostre = "/stefs-bakery/postre-test-1.png";
-const bgLucuma = "/stefs-bakery/lucuma-test-1.png";
-const bgManjar = "/stefs-bakery/manjar-test-1.png";
-const bgFrutilla = "/stefs-bakery/frutilla-test-1.png";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -24,27 +19,27 @@ import Layout from "../layouts/Layout.astro";
 	
 	<section>
 		<img src={bgHero} alt="logo" class="w-full h-auto -mt-8 mb-4 z-10" />
-		<div class="w-2/3 mx-auto px-6 py-8 pb-4 bg-[#faf7f4] -mt-20 z-20 relative text-center text-lg rounded-2xl">
+		<div class="w-[80%] mx-auto px-4 py-5 pb-4 bg-[#faf7f4]/95 -mt-14 z-20 relative text-center text-lg rounded-2xl">
 			<h1 class="mb-2 text-lg">Hecho con amor, para momentos inolvidables.</h1>
 			<img src={logoStefsBakeryS} class="w-4 h-auto mx-auto rotate-90" />
 		</div>
 	</section>
 	
 	<section class="px-6 py-4">
-		<p class="sb-special uppercase mt-4 mb-3">Una explosión de sabores...</p>
+		<p class="sb-special text-[14px] uppercase mt-4 mb-3">Una explosión de sabores...</p>
 		<div class="grid grid-cols-2 gap-3">
-			<a href="/alfajor-lucuma" class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
+			<a href="/stefs-bakery/alfajor-de-lucuma" class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
 				<img src={postre1} class="w-full h-auto"/>
 				<div class="p-3">
 					<h2 class="text-[12px] font-semibold mb-2">ALFAJOR de LÚCUMA</h2>
-					<p class="text-[12px] leading-normal">Alfajor de maicena con manjar de lúcuma.</p>
+					<p class="text-[12px] leading-[1.2]]">Alfajor de maicena con manjar de lúcuma.</p>
 				</div>
 			</a>
-			<a href="/alfajor-lucuma" class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
-				<img src={postre1} class="w-full h-auto"/>
+			<a href="/stefs-bakery/alfajor-de-matcha" class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
+				<img src={postre3} class="w-full h-auto"/>
 				<div class="p-3">
-					<h2 class="text-sm font-semibold mb-2">ALFAJOR de <span class="bg-[#9fa968] text-white px-1 py-0.5">MATCHA</span></h2>
-					<p class="text-[12px] leading-normal">Alfajor de maicena con matcha y manjar de lúcuma. </p>
+					<h2 class="text-[12px] font-semibold mb-2">ALFAJOR de <span class="bg-[#9fa968] text-white px-1 py-0.5">MATCHA</span></h2>
+					<p class="text-[12px] leading-[1.2]">Alfajor de maicena con matcha y manjar de lúcuma. </p>
 				</div>
 			</a>
 		</div>
@@ -53,11 +48,10 @@ import Layout from "../layouts/Layout.astro";
 		<div class="flex items-center gap-4 bg-[#eaedef] text-[#638489] p-4 rounded-2xl">
 			<img src={deliveryIcon} alt="delivery" class="w-14 h-auto" />
 			<div>
-				<p class="font-bold text-base">Envíos en Málaga Capital</p>
+				<p class="font-bold text-[14px]">Envíos en Málaga Capital</p>
 				<p>Consulta zonas y horarios.</p>
 			</div>
 		</div>
 	</section>
   
-  </section>
 </Layout>
