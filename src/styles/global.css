@@ -2,10 +2,11 @@
 
 @import "tailwindcss";
 
-:root{
-   --color-verde: #f3f3f3;
+body{
+   color: #8c7d6d;
 }
 
-h1 {
+h1,
+.sb-special {
    font-family: "Prata", serif;
 }
