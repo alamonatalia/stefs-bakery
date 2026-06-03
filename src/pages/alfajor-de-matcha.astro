@@ -94,7 +94,7 @@ import Layout from "../layouts/Layout.astro";
 		const message = encodeURIComponent(
 			`Hola, quiero hacer un pedido de Alfajor de Matcha "${selectedLabel}"`
 		);
-		window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+		window.location.href = `https://wa.me/${phone}?text=${message}`, "_blank";
 	});
 </script>
 
