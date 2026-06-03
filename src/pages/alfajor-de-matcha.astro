@@ -40,21 +40,63 @@ import Layout from "../layouts/Layout.astro";
 
 		<p class="text-[14px] font-semibold tracking-wider mt-6 mb-2">ELIGE SU PRESENTACIÓN</p>
 		<div class="grid grid-cols-2 gap-4">
-			<div class="border border-solid border-[#8c7d6d] rounded-xl p-4 text-center">
-				<p class="">Individual</p>
+			<button
+				data-label="Individual"
+				class="presentation-option border border-solid border-[#8c7d6d] rounded-xl p-4 text-center cursor-pointer transition-all"
+			>
+				<p>Individual</p>
 				<p class="text-2xl">€4</p>
-			</div>
-			<div class="border border-solid border-[#8c7d6d] rounded-xl p-4 text-center">
-				<p class="">Caja de 6 unid.</p>
+			</button>
+			<button
+				data-label="Caja de 6 unid."
+				class="presentation-option border border-solid border-[#8c7d6d] rounded-xl p-4 text-center cursor-pointer transition-all"
+			>
+				<p>Caja de 6 unid.</p>
 				<p class="text-2xl">€22</p>
-			</div>
+			</button>
 		</div>
-		<a href="#" class="bg-[#90aab1] text-white rounded-full font-semibold text-center py-4 block mt-8 mb-2">HAZ TU PEDIDO</a>
-
+		<button id="whatsapp-btn" class="bg-[#90aab1] text-white rounded-full font-semibold text-center py-4 block w-full mt-8 mb-2">HAZ TU PEDIDO</button>
 	</section>
+
 
 	<section class="bg-[#fbf7f3] text-center -mt-10 pt-14 pb-8 ">
 		<p class="font-bold">¿Tienes dudas o consultas?</p>
 		<p>Contáctanos y te responderemos lo antes posible.</p>
 	</section>
+
+	<style>
+	.presentation-option.selected {
+		background-color: #90aab1;
+		color: white;
+		border-color: #90aab1;
+	}
+</style>
+
+<script>
+	const options = document.querySelectorAll(".presentation-option");
+	const btn = document.getElementById("whatsapp-btn");
+	const phone = "34691551884";
+	let selectedLabel = "";
+
+	options.forEach(option => {
+		option.addEventListener("click", () => {
+			options.forEach(o => o.classList.remove("selected"));
+			option.classList.add("selected");
+			selectedLabel = option.getAttribute("data-label") ?? "";
+		});
+	});
+
+	btn?.addEventListener("click", () => {
+		if (!selectedLabel) {
+			alert("Por favor elige una presentación primero.");
+			return;
+		}
+		const message = encodeURIComponent(
+			`Hola, quiero hacer un pedido de Alfajor de Matcha "${selectedLabel}"`
+		);
+		window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+	});
+</script>
+
+
 </Layout>

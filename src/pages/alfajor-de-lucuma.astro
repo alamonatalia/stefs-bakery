@@ -3,15 +3,6 @@ const logoStefs = "/stefs-bakery/stefs.svg";
 const arrow = "/stefs-bakery/arrow.svg";
 const postre2 = "/stefs-bakery/postre-2.png";
 
-const logoStefsBakeryS = "/stefs-bakery/stefs-bakery-s.svg";
-const bgHero = "/stefs-bakery/foto-v3-compress.png";
-const deliveryIcon ="/stefs-bakery/delivery.svg";
-
-const bgImage = "/stefs-bakery/bg-test-8.png"; 
-const bgPostre = "/stefs-bakery/postre-test-1.png";
-const bgLucuma = "/stefs-bakery/lucuma-test-1.png";
-const bgManjar = "/stefs-bakery/manjar-test-1.png";
-const bgFrutilla = "/stefs-bakery/frutilla-test-1.png";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -89,7 +80,7 @@ import Layout from "../layouts/Layout.astro";
 			return;
 		}
 		const message = encodeURIComponent(
-			`Hola, estoy interesado en hacer un pedido de Alfajor de Lúcuma "${selectedLabel}"`
+			`Hola, quiero hacer un pedido de Alfajor de Lúcuma "${selectedLabel}"`
 		);
 		window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 	});
