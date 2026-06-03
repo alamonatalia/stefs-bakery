@@ -3,13 +3,9 @@ const logoStefs = "/stefs-bakery/stefs.svg";
 const arrow = "/stefs-bakery/arrow.svg";
 const postre2 = "/stefs-bakery/postre-2.png";
 
-
 const logoStefsBakeryS = "/stefs-bakery/stefs-bakery-s.svg";
 const bgHero = "/stefs-bakery/foto-v3-compress.png";
-
 const deliveryIcon ="/stefs-bakery/delivery.svg";
-
-
 
 const bgImage = "/stefs-bakery/bg-test-8.png"; 
 const bgPostre = "/stefs-bakery/postre-test-1.png";
@@ -41,65 +37,60 @@ import Layout from "../layouts/Layout.astro";
 		<p class="text-[14px] font-semibold tracking-wider mt-6 mb-2">ELIGE SU PRESENTACIÓN</p>
 		<div class="grid grid-cols-2 gap-4">
 			<button
-				id="opt-individual"
-				onclick="selectOption('Individual', '€4')"
+				data-label="Individual"
 				class="presentation-option border border-solid border-[#8c7d6d] rounded-xl p-4 text-center cursor-pointer transition-all"
 			>
 				<p>Individual</p>
 				<p class="text-2xl">€4</p>
 			</button>
 			<button
-				id="opt-caja"
-				onclick="selectOption('Caja de 6 unid.', '€22')"
+				data-label="Caja de 6 unid."
 				class="presentation-option border border-solid border-[#8c7d6d] rounded-xl p-4 text-center cursor-pointer transition-all"
 			>
 				<p>Caja de 6 unid.</p>
 				<p class="text-2xl">€22</p>
 			</button>
 		</div>
-		<a href="#" id="whatsapp-btn" class="bg-[#90aab1] text-white rounded-full font-semibold text-center py-4 block mt-8 mb-2">HAZ TU PEDIDO</a>
-
+		<button id="whatsapp-btn" class="bg-[#90aab1] text-white rounded-full font-semibold text-center py-4 block w-full mt-8 mb-2">HAZ TU PEDIDO</button>
 	</section>
 
-	<section class="bg-[#fbf7f3] text-center -mt-10 pt-14 pb-8 ">
+	<section class="bg-[#fbf7f3] text-center -mt-10 pt-14 pb-8">
 		<p class="font-bold">¿Tienes dudas o consultas?</p>
 		<p>Contáctanos y te responderemos lo antes posible.</p>
 	</section>
-	
+
+</Layout>
+
 <style>
-    .presentation-option.selected {
-        background-color: #90aab1;
-        color: white;
-        border-color: #90aab1;
-    }
+	.presentation-option.selected {
+		background-color: #90aab1;
+		color: white;
+		border-color: #90aab1;
+	}
 </style>
 
 <script>
-    let selectedOption = "";
+	const options = document.querySelectorAll(".presentation-option");
+	const btn = document.getElementById("whatsapp-btn");
+	const phone = "34691551884";
+	let selectedLabel = "";
 
-    function selectOption(label: string, price: string) {
-        selectedOption = label;
+	options.forEach(option => {
+		option.addEventListener("click", () => {
+			options.forEach(o => o.classList.remove("selected"));
+			option.classList.add("selected");
+			selectedLabel = option.getAttribute("data-label") ?? "";
+		});
+	});
 
-        // Quita selección de todos
-        document.querySelectorAll(".presentation-option").forEach(el => {
-            el.classList.remove("selected");
-        });
-
-        // Marca el clickeado
-        const id = label === "Individual" ? "opt-individual" : "opt-caja";
-        document.getElementById(id)?.classList.add("selected");
-
-        // Actualiza el href del botón
-        const phone = "34691551884"; // ← pon aquí el número con código de país, sin +
-        const message = encodeURIComponent(
-            `Hola, estoy interesado en hacer un pedido de Alfajor de Lúcuma "${label}"`
-        );
-        const btn = document.getElementById("whatsapp-btn");
-        if (btn) {
-            btn.setAttribute("href", `https://wa.me/${phone}?text=${message}`);
-            btn.setAttribute("target", "_blank");
-        }
-    }
+	btn?.addEventListener("click", () => {
+		if (!selectedLabel) {
+			alert("Por favor elige una presentación primero.");
+			return;
+		}
+		const message = encodeURIComponent(
+			`Hola, estoy interesado en hacer un pedido de Alfajor de Lúcuma "${selectedLabel}"`
+		);
+		window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+	});
 </script>
-
-</Layout>
