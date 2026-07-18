@@ -1,10 +1,13 @@
 ---
-const logoStefsBakery = "/stefs-bakery/stefs-bakery.svg";
-const logoStefsBakeryS = "/stefs-bakery/stefs-bakery-s.svg";
-const bgHero = "/stefs-bakery/composicion-4-edit3-compress.png";
-const postre1 = "/stefs-bakery/alfajor-maicena-2-edit-compress2.png";
-const postre2 = "/stefs-bakery/alfajor-matcha-1-edit-compress2.png";
-const deliveryIcon ="/stefs-bakery/delivery.svg";
+const basePath = "/";
+const lucumaHref = `${basePath}alfajor-de-lucuma`;
+const matchaHref = `${basePath}alfajor-de-matcha`;
+const logoStefsBakery = `${basePath}stefs-bakery.svg`;
+const logoStefsBakeryS = `${basePath}stefs-bakery-s.svg`;
+const bgHero = `${basePath}composicion-4-edit3-compress.png`;
+const postre1 = `${basePath}alfajor-maicena-2-edit-compress2.png`;
+const postre2 = `${basePath}alfajor-matcha-1-edit-compress2.png`;
+const deliveryIcon = `${basePath}delivery.svg`;
 
 
 
@@ -28,14 +31,14 @@ import Layout from "../layouts/Layout.astro";
 	<section class="px-5 py-4">
 		<p class="sb-special text-[18px] uppercase mt-4 mb-3">Nuestros productos</p>
 		<div class="grid grid-cols-2 gap-3">
-			<a href="/stefs-bakery/alfajor-de-lucuma" class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
+			<a href={lucumaHref} class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
 				<img src={postre1} class="w-full h-auto scale-100"/>
 				<div class="p-3">
 					<h2 class="text-[13px] font-semibold mb-2">ALFAJOR de LÚCUMA</h2>
 					<p class="text-[12px] leading-[1.2]">Alfajor con manjar de lúcuma.</p>
 				</div>
 			</a>
-			<a href="/stefs-bakery/alfajor-de-matcha" class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
+			<a href={matchaHref} class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
 				<img src={postre2} class="w-full h-auto"/>
 				<div class="p-3">
 					<h2 class="text-[13px] font-semibold mb-2">ALFAJOR de <span class="bg-[#9fa968] text-white px-1 py-0">MATCHA</span></h2>

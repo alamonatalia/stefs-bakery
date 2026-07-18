@@ -1,7 +1,8 @@
 ---
-const logoStefs = "/stefs-bakery/stefs.svg";
-const arrow = "/stefs-bakery/arrow.svg";
-const postre = "/stefs-bakery/alfajor-maicena-3-macro-edit-compress.png";
+const basePath = "/";
+const logoStefs = `${basePath}stefs.svg`;
+const arrow = `${basePath}arrow.svg`;
+const postre = `${basePath}alfajor-maicena-3-macro-edit-compress.png`;
 
 import Layout from "../layouts/Layout.astro";
 ---
@@ -9,7 +10,7 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
 
 	<header class="flex items-center py-4 mb-4"> 
-		<a href="/stefs-bakery">
+		<a href={basePath}>
 			<img src={arrow} alt="logo" class="h-7 pl-4 w-auto mx-auto mb-4 z-20 relative" />
 		</a>
 		<div class="w-full">
