@@ -1,20 +1,18 @@
 ---
 
+const lucumaHref = "/alfajor-de-lucuma";
+const matchaHref = "/alfajor-de-matcha";
 
+const logoStefsBakery = "/stefs-bakery.svg";
+const logoStefsBakeryS = "/stefs-bakery-s.svg";
+const deliveryIcon = "/delivery.svg";
 
-const basePath = "/";
-const lucumaHref = `${basePath}alfajor-de-lucuma`;
-const matchaHref = `${basePath}alfajor-de-matcha`;
-const logoStefsBakery = `${basePath}stefs-bakery.svg`;
-const logoStefsBakeryS = `${basePath}stefs-bakery-s.svg`;
-const deliveryIcon = `${basePath}delivery.svg`;
-
-import bgHeroWebp from "../assets/hero-pasteleria-peruana.webp?url";
-import bgHeroJpg from "../assets/hero-pasteleria-peruana.jpg?url";
-import postre1Webp from "../assets/alfajor-lucuma.webp?url";
-import postre1Jpg from "../assets/alfajor-lucuma.jpg?url";
-import postre2Webp from "../assets/alfajor-matcha.webp?url";
-import postre2Jpg from "../assets/alfajor-matcha.jpg?url";
+import bgHeroWebp from "../assets/hero/hero-pasteleria-peruana.webp?url";
+import bgHeroJpg from "../assets/hero/hero-pasteleria-peruana.jpg?url";
+import lucumaWebp from "../assets/products/alfajor-lucuma.webp?url";
+import lucumaJpg from "../assets/products/alfajor-lucuma.jpg?url";
+import matchaWebp from "../assets/products/alfajor-matcha.webp?url";
+import matchaJpg from "../assets/products/alfajor-matcha.jpg?url";
 
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
@@ -27,10 +25,10 @@ import Footer from "../components/Footer.astro";
 >
 
 	<header>
-		<img src={logoStefsBakery} alt="logo" class="w-32 h-auto mx-auto mb-4 -mt-4 z-20 relative" />
+		<img src={logoStefsBakery} alt="Logo de Stef's Bakery" class="w-32 h-auto mx-auto mb-4 -mt-4 z-20 relative" width="128" height="128" />
 	</header>
 	
-	<section>
+	<section aria-labelledby="hero-title">
 		<picture>
 			<source srcset={bgHeroWebp} type="image/webp" />
 			<img
@@ -39,31 +37,34 @@ import Footer from "../components/Footer.astro";
 				class="w-full h-auto -mt-10 mb-4 z-10"
 				loading="eager"
 				fetchpriority="high"
+				decoding="async"
+				width="1080"
+  				height="720"
 			/>
 		</picture>
 		<div class="w-[70%] mx-auto px-10 py-5 pb-4 bg-[#F7F2ED]/95 -mt-12 z-20 relative text-center text-lg rounded-2xl">
-			<h1 class="mb-2 text-xl sb-special">Esencia peruana, bienestar y memoria.</h1>
-			<img src={logoStefsBakeryS} class="w-4 h-auto mx-auto rotate-90" />
+			<h1 id="hero-title" class="mb-2 text-xl sb-special">Esencia peruana, bienestar y memoria.</h1>
+			<img src={logoStefsBakeryS} class="w-4 h-auto mx-auto rotate-90" alt="" aria-hidden="true" />
 		</div>
 	</section>
 	
 	<section class="px-5 py-4">
 		<p class="sb-special text-[18px] uppercase mt-4 mb-3">Nuestros productos</p>
 		<div class="grid grid-cols-2 gap-3">
-			<a href={lucumaHref} class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
+			<a href={lucumaHref} aria-label="Ver alfajor artesanal de lúcuma" class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
 				<picture>
-					<source srcset={postre1Webp} type="image/webp" />
-					<img src={postre1Jpg} class="w-full h-auto scale-100"/>
+					<source srcset={lucumaWebp} type="image/webp" />
+					<img src={lucumaJpg} alt="Alfajor artesanal de lúcuma elaborado por Stef's Bakery" loading="lazy" decoding="async" class="w-full h-auto scale-100" width="167" height="218"/>
 				</picture>
 				<div class="p-3">
 					<h2 class="text-[13px] font-semibold mb-2">ALFAJOR de LÚCUMA</h2>
 					<p class="text-[12px] leading-[1.2]">Alfajor con manjar de lúcuma.</p>
 				</div>
 			</a>
-			<a href={matchaHref} class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
+			<a href={matchaHref} aria-label="Ver alfajor artesanal de matcha" class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
 				<picture>
-					<source srcset={postre2Webp} type="image/webp" />
-					<img src={postre2Jpg} class="w-full h-auto"/>
+					<source srcset={matchaWebp} type="image/webp" />
+					<img src={matchaJpg} alt="Alfajor artesanal de matcha con manjar de lúcuma" loading="lazy" decoding="async" class="w-full h-auto" width="167" height="218"/>
 				</picture>
 				<div class="p-3">
 					<h2 class="text-[13px] font-semibold mb-2">ALFAJOR de <span class="bg-[#9fa968] text-white px-1 py-0">MATCHA</span></h2>
@@ -74,7 +75,7 @@ import Footer from "../components/Footer.astro";
 	</section>
 	<section class="px-12 py-4 mb-4">
 		<div class="flex items-center gap-4 bg-[#eaedef] text-[#638489] p-4 rounded-2xl">
-			<img src={deliveryIcon} alt="delivery" class="w-12 h-auto" />
+			<img src={deliveryIcon} alt="" aria-hidden="true" class="w-12 h-auto" />
 			<div>
 				<p class="font-bold text-[14px]">Envíos en Málaga centro</p>
 				<p class="text-[12px]">Haz tu pedido 24hs antes</p>
