@@ -1,11 +1,7 @@
 ---
 
-const lucumaHref = "/alfajor-de-lucuma";
-const matchaHref = "/alfajor-de-matcha";
-
-const logoStefsBakery = "/stefs-bakery.svg";
-const logoStefsBakeryS = "/stefs-bakery-s.svg";
-const deliveryIcon = "/delivery.svg";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
 
 import { Image } from "astro:assets";
 
@@ -13,8 +9,12 @@ import hero from "../assets/hero/hero-pasteleria-peruana.jpg";
 import lucuma from "../assets/products/alfajor-lucuma.jpg";
 import matcha from "../assets/products/alfajor-matcha.jpg";
 
-import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
+const lucumaHref = "/alfajor-de-lucuma";
+const matchaHref = "/alfajor-de-matcha";
+
+const logoStefsBakery = "/stefs-bakery.svg";
+const logoStefsBakeryS = "/stefs-bakery-s.svg";
+const deliveryIcon = "/delivery.svg";
 
 ---
 
@@ -48,8 +48,8 @@ import Footer from "../components/Footer.astro";
 		</div>
 	</section>
 	
-	<section class="px-5 py-4">
-		<h2 class="sb-special text-[18px] uppercase mt-4 mb-3">Nuestros productos</h2>
+	<section class="px-5 py-4" aria-labelledby="products-title">
+		<h2 id="products-title" class="sb-special text-[18px] uppercase mt-4 mb-3">Nuestros productos</h2>
 		<div class="grid grid-cols-2 gap-3">
 			<a href={lucumaHref} aria-label="Ver alfajor artesanal de lúcuma" class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
 				<Image
