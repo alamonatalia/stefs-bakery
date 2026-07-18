@@ -27,7 +27,7 @@ const deliveryIcon = "/delivery.svg";
 		<img src={logoStefsBakery} alt="Logo de Stef's Bakery" class="w-32 h-auto mx-auto mb-4 -mt-4 z-20 relative" width="128" height="128" />
 	</header>
 	
-	<section aria-labelledby="hero-title">
+	<section aria-labelledby="hero-title" class="lg:max-w-6xl lg:mx-auto">
 		<Image
 			src={hero}
 			alt="Alfajores artesanales de Stef's Bakery, pastelería peruana en Málaga"
@@ -39,8 +39,8 @@ const deliveryIcon = "/delivery.svg";
 			class="w-full h-auto -mt-10 mb-4 z-10"
 		/>
 		
-		<div class="w-[70%] mx-auto px-8 py-5 pb-4 bg-[#F7F2ED]/95 -mt-12 z-20 relative text-center text-lg rounded-2xl">
-			<h1 id="hero-title" class="mb-2 text-xl sb-special">
+		<div class="w-[70%] mx-auto px-8 py-5 pb-4 bg-[#F7F2ED]/95 -mt-12 z-20 relative text-center text-lg rounded-2xl lg:max-w-xl">
+			<h1 id="hero-title" class="mb-2 text-xl sb-special lg:text-2xl">
 				Alfajores peruanos artesanales en Málaga
 			</h1>
 			<!-- <p class="text-sm">Esencia peruana, bienestar y memoria.</p>	 -->
@@ -48,9 +48,9 @@ const deliveryIcon = "/delivery.svg";
 		</div>
 	</section>
 	
-	<section class="px-5 py-4" aria-labelledby="products-title">
-		<h2 id="products-title" class="sb-special text-[18px] uppercase mt-4 mb-3">Nuestros productos</h2>
-		<div class="grid grid-cols-2 gap-3">
+	<section class="px-5 py-4 max-w-6xl lg:mx-auto" aria-labelledby="products-title">
+		<h2 id="products-title" class="sb-special text-[18px] uppercase mt-4 mb-3 lg:text-2xl lg:text-center lg:mb-6 lg:mt-8">Nuestros productos</h2>
+		<div class="grid grid-cols-2 gap-3 lg:gap-10 lg:max-w-3xl lg:mx-auto">
 			<a href={lucumaHref} aria-label="Ver alfajor artesanal de lúcuma" class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
 				<Image
 					src={lucuma}
@@ -61,9 +61,9 @@ const deliveryIcon = "/delivery.svg";
 					quality={90}
 					class="w-full h-auto"
 				/>
-				<div class="p-3">
-					<h3 class="text-[13px] font-semibold mb-2">ALFAJOR de LÚCUMA</h3>
-					<p class="text-[12px] leading-[1.2]">Alfajor con manjar de lúcuma.</p>
+				<div class="p-3 lg:p-6">
+					<h3 class="text-[13px] font-semibold mb-2 lg:text-xl">ALFAJOR de LÚCUMA</h3>
+					<p class="text-[12px] leading-[1.2] lg:text-lg">Alfajor con manjar de lúcuma.</p>
 				</div>
 			</a>
 			<a href={matchaHref} aria-label="Ver alfajor artesanal de matcha" class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
@@ -76,19 +76,19 @@ const deliveryIcon = "/delivery.svg";
 					quality={90}
 					class="w-full h-auto"
 				/>
-				<div class="p-3">
-					<h3 class="text-[13px] font-semibold mb-2">ALFAJOR de <span class="bg-[#9fa968] text-white px-1 py-0">MATCHA</span></h3>
-					<p class="text-[12px] leading-[1.2]">Alfajor con matcha y manjar de lúcuma. </p>
+				<div class="p-3 lg:p-6">
+					<h3 class="text-[13px] font-semibold mb-2 lg:text-xl">ALFAJOR de <span class="bg-[#9fa968] text-white px-1 py-0">MATCHA</span></h3>
+					<p class="text-[12px] leading-[1.2] lg:text-lg">Alfajor con matcha y manjar de lúcuma. </p>
 				</div>
 			</a>
 		</div>
 	</section>
-	<section class="px-12 py-4 mb-4">
-		<div class="flex items-center gap-4 bg-[#eaedef] text-[#638489] p-4 rounded-2xl">
-			<img src={deliveryIcon} alt="" aria-hidden="true" class="w-12 h-auto" />
+	<section class="px-12 py-4 mb-4 lg:max-w-6xl lg:mx-auto lg:mb-8">
+		<div class="flex items-center gap-4 bg-[#eaedef] text-[#638489] p-4 rounded-2xl lg:max-w-xl lg:mx-auto lg:gap-8 lg:p-8 lg:justify-center">
+			<img src={deliveryIcon} alt="" aria-hidden="true" class="w-12 h-auto lg:w-16" />
 			<div>
-				<p class="font-bold text-[14px]">Envíos en Málaga centro</p>
-				<p class="text-[12px]">Haz tu pedido 24hs antes</p>
+				<p class="font-bold text-[14px] lg:text-xl">Envíos en Málaga centro</p>
+				<p class="text-[12px] lg:text-lg">Haz tu pedido 24hs antes.</p>
 			</div>
 		</div>
 	</section>
