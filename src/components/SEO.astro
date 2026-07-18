@@ -4,7 +4,7 @@ import { SITE } from "../consts";
 interface Props {
   title?: string;
   description?: string;
-//   image?: string;
+  image?: string;
   canonical?: string;
   noindex?: boolean;
 }
@@ -12,7 +12,7 @@ interface Props {
 const {
   title = SITE.title,
   description = SITE.description,
-//   image = "/og-image.jpg",
+  image = "/og-image.png",
   canonical,
   noindex = false,
 } = Astro.props;
@@ -24,7 +24,7 @@ const pageUrl = canonical
   ? new URL(canonical, SITE.url).toString()
   : Astro.url.href;
 
-// const imageUrl = new URL(image, SITE.url).toString();
+const imageUrl = new URL(image, SITE.url).toString();
 ---
 
 <title>{pageTitle}</title>
@@ -53,7 +53,7 @@ const pageUrl = canonical
 <meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={pageUrl} />
-<!-- <meta property="og:image" content={imageUrl} /> -->
+<meta property="og:image" content={imageUrl} />
 <meta property="og:locale" content={SITE.locale} />
 <meta property="og:site_name" content={SITE.title} />
 
@@ -61,4 +61,4 @@ const pageUrl = canonical
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={pageTitle} />
 <meta name="twitter:description" content={description} />
-<!-- <meta name="twitter:image" content={imageUrl} /> -->
+<meta name="twitter:image" content={imageUrl} />
