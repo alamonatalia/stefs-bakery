@@ -17,8 +17,9 @@ const {
   noindex = false,
 } = Astro.props;
 
-const pageTitle =
-  title === SITE.title ? SITE.title : `${title} | ${SITE.title}`;
+const pageTitle =  title 
+    ? `${title} | ${SITE.title}`
+    : SITE.title;
 
 const pageUrl = canonical
   ? new URL(canonical, SITE.url).toString()
