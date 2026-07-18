@@ -1,4 +1,7 @@
 ---
+
+
+
 const basePath = "/";
 const lucumaHref = `${basePath}alfajor-de-lucuma`;
 const matchaHref = `${basePath}alfajor-de-matcha`;
@@ -9,10 +12,12 @@ const postre1 = `${basePath}alfajor-maicena-2-edit-compress2.png`;
 const postre2 = `${basePath}alfajor-matcha-1-edit-compress2.png`;
 const deliveryIcon = `${basePath}delivery.svg`;
 
-
+import bgHeroWebp from "../assets/hero-pasteleria-peruana.webp?url";
+import bgHeroJpg from "../assets/hero-pasteleria-peruana.jpg?url";
 
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
+
 ---
 
 <Layout
@@ -25,7 +30,16 @@ import Footer from "../components/Footer.astro";
 	</header>
 	
 	<section>
-		<img src={bgHero} alt="logo" class="w-full h-auto -mt-10 mb-4 z-10" />
+		<picture>
+			<source srcset={bgHeroWebp} type="image/webp" />
+			<img
+				src={bgHeroJpg}
+				alt="Alfajores artesanales de Stef's Bakery, pastelería peruana en Málaga"
+				class="w-full h-auto -mt-10 mb-4 z-10"
+				loading="eager"
+				fetchpriority="high"
+			/>
+		</picture>
 		<div class="w-[70%] mx-auto px-10 py-5 pb-4 bg-[#F7F2ED]/95 -mt-12 z-20 relative text-center text-lg rounded-2xl">
 			<h1 class="mb-2 text-xl sb-special">Esencia peruana, bienestar y memoria.</h1>
 			<img src={logoStefsBakeryS} class="w-4 h-auto mx-auto rotate-90" />
