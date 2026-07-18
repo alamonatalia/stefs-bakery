@@ -7,13 +7,14 @@ const lucumaHref = `${basePath}alfajor-de-lucuma`;
 const matchaHref = `${basePath}alfajor-de-matcha`;
 const logoStefsBakery = `${basePath}stefs-bakery.svg`;
 const logoStefsBakeryS = `${basePath}stefs-bakery-s.svg`;
-const bgHero = `${basePath}composicion-4-edit3-compress.png`;
-const postre1 = `${basePath}alfajor-maicena-2-edit-compress2.png`;
-const postre2 = `${basePath}alfajor-matcha-1-edit-compress2.png`;
 const deliveryIcon = `${basePath}delivery.svg`;
 
 import bgHeroWebp from "../assets/hero-pasteleria-peruana.webp?url";
 import bgHeroJpg from "../assets/hero-pasteleria-peruana.jpg?url";
+import postre1Webp from "../assets/alfajor-lucuma.webp?url";
+import postre1Jpg from "../assets/alfajor-lucuma.jpg?url";
+import postre2Webp from "../assets/alfajor-matcha.webp?url";
+import postre2Jpg from "../assets/alfajor-matcha.jpg?url";
 
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
@@ -50,14 +51,20 @@ import Footer from "../components/Footer.astro";
 		<p class="sb-special text-[18px] uppercase mt-4 mb-3">Nuestros productos</p>
 		<div class="grid grid-cols-2 gap-3">
 			<a href={lucumaHref} class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
-				<img src={postre1} class="w-full h-auto scale-100"/>
+				<picture>
+					<source srcset={postre1Webp} type="image/webp" />
+					<img src={postre1Jpg} class="w-full h-auto scale-100"/>
+				</picture>
 				<div class="p-3">
 					<h2 class="text-[13px] font-semibold mb-2">ALFAJOR de LÚCUMA</h2>
 					<p class="text-[12px] leading-[1.2]">Alfajor con manjar de lúcuma.</p>
 				</div>
 			</a>
 			<a href={matchaHref} class="border border-solid border-[#d2c3a8] rounded-lg overflow-hidden block">
-				<img src={postre2} class="w-full h-auto"/>
+				<picture>
+					<source srcset={postre2Webp} type="image/webp" />
+					<img src={postre2Jpg} class="w-full h-auto"/>
+				</picture>
 				<div class="p-3">
 					<h2 class="text-[13px] font-semibold mb-2">ALFAJOR de <span class="bg-[#9fa968] text-white px-1 py-0">MATCHA</span></h2>
 					<p class="text-[12px] leading-[1.2]">Alfajor con matcha y manjar de lúcuma. </p>

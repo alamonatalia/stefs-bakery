@@ -2,7 +2,9 @@
 const basePath = "/";
 const logoStefs = `${basePath}stefs.svg`;
 const arrow = `${basePath}arrow.svg`;
-const postre2 = `${basePath}alfajor-matcha-3-macro-edit-compress.png`;
+
+import postreWebp from "../assets/alfajor-matcha.webp?url";
+import postreJpg from "../assets/alfajor-matcha.jpg?url";
 
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
@@ -23,7 +25,10 @@ import Footer from "../components/Footer.astro";
 	</header>
 	
 	<section class="aspect-video bg-gray-200 relative">
-		<img src={postre2} alt="logo" class="w-full h-full object-cover -mt-8 mb-4 z-10" />
+		<picture>
+			<source srcset={postreWebp} type="image/webp" />
+			<img src={postreJpg} alt="Alfajor de matcha artesanal" class="w-full h-full object-cover -mt-8 mb-4 z-10" />
+		</picture>
 	</section>
 
 	<section class="bg-white -mt-8 relative rounded-4xl p-8">
